@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredAltAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="myValues">
+        <value>
+          <list size="16">
+            <item index="0" class="java.lang.String" itemvalue="placeholder" />
+            <item index="1" class="java.lang.String" itemvalue="v-cloak" />
+            <item index="2" class="java.lang.String" itemvalue="@mouseover" />
+            <item index="3" class="java.lang.String" itemvalue="@mouseout" />
+            <item index="4" class="java.lang.String" itemvalue="@click" />
+            <item index="5" class="java.lang.String" itemvalue=":class" />
+            <item index="6" class="java.lang.String" itemvalue="v-show" />
+            <item index="7" class="java.lang.String" itemvalue="v-model" />
+            <item index="8" class="java.lang.String" itemvalue="v-for" />
+            <item index="9" class="java.lang.String" itemvalue="v-if" />
+            <item index="10" class="java.lang.String" itemvalue="v-bind:src" />
+            <item index="11" class="java.lang.String" itemvalue="v-bind:value" />
+            <item index="12" class="java.lang.String" itemvalue="v-bind:title" />
+            <item index="13" class="java.lang.String" itemvalue="v-on:click" />
+            <item index="14" class="java.lang.String" itemvalue="v-bind:productid" />
+            <item index="15" class="java.lang.String" itemvalue="v-else" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="JSUnresolvedFunction" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="JSUnresolvedVariable" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RequiredAttributes" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
+  </profile>
+</component>

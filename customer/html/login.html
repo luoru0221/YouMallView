@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>美多商城-登录</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+<div class="login_top clearfix">
+    <a href="index.html" class="login_logo"><img src="../images/logo02.png"></a>
+</div>
+<div class="login_form_bg">
+    <div class="login_form_wrap clearfix">
+        <div class="login_banner fl"></div>
+        <div class="slogan fl">商品美 · 种类多 · 欢迎光临</div>
+        <div class="login_form fr" id="login_form">
+            <div class="login_title clearfix">
+                <a href="javascript:" class="cur">账户登录</a>
+            </div>
+
+            <div class="form_con">
+                <div class="form_input cur">
+                    <form>
+                        <input type="text" name="user_phone" class="name_input" placeholder="请输入手机号"
+                               v-model="userPhone">
+                        <input type="password" name="user_password" class="pass_input" placeholder="请输入密码"
+                               v-model="userPassword">
+                        <div class="more_input clearfix">
+                            <input type="checkbox" name="keep_login" v-model="keepLogin">
+                            <label>记住登录</label>
+                            <a href="find_password.html">忘记密码</a>
+                        </div>
+                        <input type="button" value="登 录" class="input_submit" v-on:click="login">
+                    </form>
+                </div>
+            </div>
+
+            <div class="third_party">
+                <span class="login_error" v-show="passwordError">账号或密码错误！</span>
+                <a href="register.html" class="register_btn">立即注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer no-mp">
+    <div class="foot_link">
+        <a href="#">关于我们</a>
+        <span>|</span>
+        <a href="#">联系我们</a>
+        <span>|</span>
+        <a href="#">招聘人才</a>
+        <span>|</span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight © 2019 吉首大学软件学院CCWRuL All Rights Reserved</p>
+    <p>电话：010-****888 湘ICP备*******8号</p>
+</div>
+</body>
+<script type="text/javascript" src="../js/axios.min.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
+</html>

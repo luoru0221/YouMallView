@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<button onclick="sendMsg()">发送短信</button>
+</body>
+<script>
+    function sendMsg() {
+        $.ajax({
+            url:"https://api.uoleem.com.cn/sms/httpBatchSend.do",
+            type:"post",
+            dataType:"json",
+            charset:"UTF-8",
+            data:{
+                username:"18607440796",
+                pwd:"232244e1b633fb089d71a5d2376e7ef8",
+                mobile:"18607440796",
+                content:"【YouMall】欢迎注册！"
+            },
+            success:function (data) {
+                console.log(data);
+            }
+        })
+    }
+</script>
+</html>

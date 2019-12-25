@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>美多商城-首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+<div class="header_con">
+    <div class="header">
+        <div class="welcome fl">欢迎来到美多商城!</div>
+        <div class="fr">
+            <div class="login_btn fl" id="login_status">
+                <a v-if="haveLogin">{{loginUser.userName}}</a>
+                <span>|</span>
+                <a v-if="haveLogin" v-on:click="logout">退出登录</a>
+                <a href="login.html" v-else>登录</a>
+                <span>|</span>
+                <a href="register.html">注册</a>
+            </div>
+            <div class="user_link fl">
+                <span>|</span>
+                <a href="user_center_info.html">用户中心</a>
+                <span>|</span>
+                <a href="cart.html">我的购物车</a>
+                <span>|</span>
+                <a href="user_center_order.html">我的订单</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search_bar clearfix">
+    <a href="index.html" class="logo fl"><img src="../images/logo.png"></a>
+    <div class="search_wrap fl">
+        <div class="search_con">
+            <input type="text" class="input_text fl" name="" placeholder="搜索商品">
+            <input type="button" class="input_btn fr" name="" value="搜索">
+        </div>
+    </div>
+
+    <div class="guest_cart fr" id="my_cart">
+        <a href="#" class="cart_name fl">我的购物车</a>
+        <div class="goods_count fl" id="show_count">{{Carts.length}}</div>
+
+        <ul class="cart_goods_show">
+            <li v-for="cart in Carts">
+                <img v-bind:src="'http://localhost:8080/YouMall/'+cart.product.productImage" alt="商品图片">
+                <h4>{{cart.product.productName}}</h4>
+                <div>{{cart.productNumber}}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="navbar_con">
+    <div class="navbar">
+        <h1 class="fl">商品分类</h1>
+        <ul class="navlist fl">
+            <li><a href="">首页</a></li>
+            <li class="interval">|</li>
+            <li><a href="">真划算</a></li>
+            <li class="interval">|</li>
+            <li><a href="">抽奖</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="pos_center_con clearfix">
+    <ul class="slide">
+        <li><a href="#"><img src="../images/slide01.jpg" alt="幻灯片01"></a></li>
+        <li><a href="#"><img src="../images/slide02.jpg" alt="幻灯片02"></a></li>
+        <li><a href="#"><img src="../images/slide03.jpg" alt="幻灯片03"></a></li>
+        <li><a href="#"><img src="../images/slide04.jpg" alt="幻灯片04"></a></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+    <ul class="points">
+    </ul>
+    <!--三级分类-->
+    <div id="category">
+        <ul class="sub_menu">
+            <li v-for="firstCategory in allCategory.childrenCategory">
+                <div class="level1">
+                    <a href="#">{{firstCategory.categoryName}}</a>
+                </div>
+                <div class="level2">
+                    <div class="list_group" v-for="secondCategory in firstCategory.childrenCategory">
+                        <div class="group_name fl">{{secondCategory.categoryName}} &gt;</div>
+                        <div class="group_detail fl">
+                            <a href="#" v-for="thirdCategory in secondCategory.childrenCategory">{{thirdCategory.categoryName}}</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="news">
+        <div class="news_title">
+            <h3>快讯</h3>
+            <a href="#">更多 &gt;</a>
+        </div>
+        <ul class="news_list">
+            <li><a href="#">i7顽石低至4199元</a></li>
+            <li><a href="#">奥克斯专场 正1匹空调1313元抢</a></li>
+            <li><a href="#">荣耀9青春版 高配 领券立减220元</a></li>
+            <li><a href="#">美多探索公益新模式</a></li>
+            <li><a href="#">i7顽石低至4199元</a></li>
+            <li><a href="#">正1匹空调1313元抢</a></li>
+            <li><a href="#">奥克斯专场 正1匹空调1313元抢</a></li>
+        </ul>
+        <a href="#" class="advs"><img src="../images/adv01.jpg"></a>
+    </div>
+</div>
+
+<div id="products">
+    <div v-for="product_group in showProducts">
+        <div class="list_model">
+            <div class="list_title clearfix">
+                <h3 class="fl">{{product_group.showGroupName}}</h3>
+                <div class="subtitle fr">
+                    <a href="#" class="active">时尚新品</a>
+                    <a href="#">加价换购</a>
+                    <a href="#">畅想低价</a>
+                    <a href="#">手机配件</a>
+                    <a href="#">精选单品</a>
+                </div>
+            </div>
+            <div class="goods_con clearfix">
+                <div class="goods_banner fl">
+                    <img src="../images/banner01.jpg">
+                    <div class="channel">
+                        <a href="#">手机</a>
+                        <a href="#">配件</a>
+                        <a href="#">充值</a>
+                        <a href="#">优惠券</a>
+                    </div>
+                    <div class="key_words">
+                        <a href="#">荣耀手机</a>
+                        <a href="#">国美手机</a>
+                        <a href="#">华为手机</a>
+                        <a href="#">热销推荐</a>
+                        <a href="#">以旧换新</a>
+                        <a href="#">潮3C</a>
+                        <a href="#">全面屏</a>
+                        <a href="#">守护宝</a>
+                        <a href="#">存储卡</a>
+                        <a href="#">保护套</a>
+                    </div>
+
+                </div>
+                 <ul class="goods_list fl">
+                    <li v-for="product in product_group.products" v-on:click="detail(product)">
+                        <a href="javascript:" class="goods_pic"><img
+                                v-bind:src="'http://localhost:8080/YouMall/'+product.productImage"></a>
+                        <h4><a href="#" v-bind:title="product.productName">{{product.productName}}</a></h4>
+                        <div class="prize">¥ {{product.productPrice}}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="foot_link">
+        <a href="#">关于我们</a>
+        <span>|</span>
+        <a href="#">联系我们</a>
+        <span>|</span>
+        <a href="#">招聘人才</a>
+        <span>|</span>
+        <a href="#">友情链接</a>
+    </div>
+    <p>CopyRight © 2016 北京美多商业股份有限公司 All Rights Reserved</p>
+    <p>电话：010-****888 京ICP备*******8号</p>
+</div>
+</body>
+<script type="text/javascript" src="../js/axios.min.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../js/slide.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+</html>
