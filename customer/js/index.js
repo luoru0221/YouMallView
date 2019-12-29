@@ -90,7 +90,6 @@ let _cart = new Vue({
             axios.post('http://localhost:8080/YouMall/cart/someone.do', loginUser)
                 .then(function (response) {
                     that.Carts = response.data;
-                    console.log(response.data);
                 })
                 .catch(error => console.log(error));
         }
