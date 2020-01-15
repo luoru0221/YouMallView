@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>商品管理</title>
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body class="hold-transition skin-red sidebar-mini">
+
+<div class="box-header with-border">
+    <h3 class="box-title">商品管理</h3>
+</div>
+
+<div class="box-body" id="goods">
+
+    <div class="table-box">
+
+        <div class="pull-left">
+            <div class="form-group form-inline">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" title="新建"
+                            onclick="window.location.href='goods_add.html'"><i class="fa fa-file-o"></i> 新建
+                    </button>
+                    <button type="button" class="btn btn-default" title="删除" v-on:click="deleteProducts"><i class="fa fa-trash-o"></i> 删除</button>
+                    <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i
+                            class="fa fa-refresh"></i> 刷新
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="box-tools pull-right">
+            <div class="has-feedback">
+                状态：<select v-model="showState">
+                <option value="-1">全部</option>
+                <option value="1">在售</option>
+                <option value="0">未上架</option>
+            </select>
+                商品名称：<input>
+                <button class="btn btn-default">查询</button>
+            </div>
+        </div>
+        <!--数据列表-->
+        <table id="dataList" class="table table-bordered table-striped table-hover dataTable">
+            <thead>
+            <tr>
+                <th class="" style="padding-right:0">
+                    <input id="selall" type="checkbox" class="icheckbox_square-blue" v-model="allChecked" v-on:change="allChecked_change">
+                </th>
+                <th class="sorting_asc">商品ID</th>
+                <th class="sorting">商品名称</th>
+                <th class="sorting">商品价格</th>
+                <th class="sorting">库存</th>
+                <th class="sorting">状态</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="product in allProducts" v-show="product.isShelves==showState||showState==-1">
+                <td><input type="checkbox" v-model="product.checked" v-on:change="checkAllChooseType"></td>
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.productPrice}}</td>
+                <td>{{product.productStock}}</td>
+                <td v-if="product.isShelves===1">在售</td>
+                <td v-else>未上架</td>
+                <td class="text-center">
+                    <button type="button" class="btn bg-olive btn-xs" v-on:click="editProduct(product)">
+                        修改
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="../js/axios.min.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../js/goods.js"></script>
+</html>

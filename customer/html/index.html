@@ -10,10 +10,13 @@
 </head>
 <body>
 <div class="header_con">
-    <div class="header">
-        <div class="welcome fl">欢迎来到美多商城!</div>
+    <div class="header" id="login_status">
+        <div class="welcome fl">
+            欢迎来到美多商城!
+            <a href="../../business/admin/index.html">商家中心</a>
+        </div>
         <div class="fr">
-            <div class="login_btn fl" id="login_status">
+            <div class="login_btn fl">
                 <a v-if="haveLogin">{{loginUser.userName}}</a>
                 <span>|</span>
                 <a v-if="haveLogin" v-on:click="logout">退出登录</a>
@@ -176,7 +179,7 @@
         <span>|</span>
         <a href="#">友情链接</a>
     </div>
-    <p>CopyRight © 2016 北京美多商业股份有限公司 All Rights Reserved</p>
+    <p>CopyRight © 2016 吉首大学CCW All Rights Reserved</p>
     <p>电话：010-****888 京ICP备*******8号</p>
 </div>
 </body>

@@ -2,12 +2,35 @@
   <dictionary name="罗汝0221">
     <words>
       <w>advs</w>
+      <w>amazeui</w>
       <w>axios</w>
+      <w>beian</w>
       <w>clearfix</w>
+      <w>cpwd</w>
+      <w>icheckbox</w>
+      <w>iframeid</w>
+      <w>logined</w>
+      <w>loginform</w>
+      <w>loginmanage</w>
+      <w>loginname</w>
+      <w>loginpwd</w>
+      <w>modernizr</w>
       <w>navbar</w>
       <w>navlist</w>
       <w>nowsite</w>
+      <w>otherlogin</w>
+      <w>selall</w>
+      <w>shoplogin</w>
+      <w>sina</w>
+      <w>slideunlock</w>
+      <w>tognzhi</w>
+      <w>topbar</w>
+      <w>treeview</w>
+      <w>webbase</w>
       <w>weixin</w>
+      <w>wraped</w>
+      <w>xfat</w>
+      <w>xlarge</w>
     </words>
   </dictionary>
 </component>

@@ -39,7 +39,7 @@ html,body{height:100%}
 	color:#666;
 }
 
-.login_btn a:hover,.user_link a:hover{
+.login_btn a:hover,.user_link a:hover,.business:hover{
 	color:#ff8800;
 }
 
@@ -725,6 +725,10 @@ html,body{height:100%}
 .reg_form .get_msg_code:hover{
 	color:#f80000;
 }
+.codeGeting{
+	background: #cdcdcd;
+	border-color: #cdcdcd;
+}
 .reg_form .pic_code{
 	float: left;
 	width:110px;
@@ -801,7 +805,7 @@ html,body{height:100%}
 .common_list_con dt{font-size:14px;font-weight:bold;margin-bottom:10px}
 .common_list_con dd input{vertical-align:bottom;margin-right:10px}
 
-.edit_site{position:absolute; right:20px;top:30px;width:100px;height:30px;background-color:#fe0000;text-align:center;line-height:30px;color:#fff}
+.edit_site{position:absolute; right:20px;top:15px;width:100px;height:30px;background-color:#fe0000;text-align:center;line-height:30px;color:#fff}
 
 .pay_style_con{margin:20px;}
 .pay_style_con input{float:left;margin:14px 7px 0 0;}
